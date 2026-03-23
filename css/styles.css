@@ -1,0 +1,226 @@
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1b2d4f;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* page wrapper */
+.page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* nav */
+nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 60px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo svg { width: 32px; height: 32px; }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover { color: #fff; }
+
+.btn-primary {
+    background: #4db8d4;
+    color: #fff;
+    border: none;
+    padding: 13px 28px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.btn-primary:hover { background: #3aa8c4; }
+
+/* hero */
+.hero {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 58%;
+    padding: 0px 90px 250px 180px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.12;
+    margin-bottom: 24px;
+}
+.hero-content h2 {
+    font-size: clamp(1.4rem, 2.25vw, 2.1rem);
+    font-weight: 800;
+    line-height: 1.12;
+    margin-bottom: 24px;
+    color: #4db8d4;
+}
+
+.hero-content h1 .accent { color: #4db8d4; }
+
+.hero-content p {
+    color: #a8bdd4;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 440px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 72px;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    padding: 13px 24px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    background: transparent;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.06); }
+
+.btn-outline .arrow {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+
+/* feature icons */
+.features {
+    display: flex;
+    gap: 56px;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.feature-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon svg { width: 52px; height: 52px; }
+
+.feature span {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.35;
+}
+
+/* hero image */
+.hero-image {
+    position: absolute;
+    right: 0%;
+    bottom: 0;
+    top: 0;
+    width: 82%;
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 65% top;
+    display: block;
+}
+
+/* fade image into the navy background on the left */
+.hero-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #1b2d4f 0%, #1b2d4f 20%, transparent 55%);
+    z-index: 2;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+    body { overflow: auto; height: auto; }
+    .page { height: auto; }
+    nav { padding: 18px 24px; }
+    .hero { position: relative; min-height: 100vh; }
+    .hero-image { width: 100%; top: 0; }
+    .hero-image::before { background: linear-gradient(to top, #1b2d4f 40%, transparent 100%); }
+    .hero-content { padding: 0 24px 48px; }
+}
